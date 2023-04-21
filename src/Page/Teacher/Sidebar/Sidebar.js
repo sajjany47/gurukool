@@ -73,7 +73,8 @@ const Sidebar = () => {
               <AiIcons.AiOutlineClose onClick={showSidebar} />
             </NavIcon>
             {SidebarData.map((item, index) => {
-              return <SubMenu item={item} key={index} />;
+              console.log(sidebar);
+              return <SubMenu item={item} key={index} marginAdjust={sidebar} />;
             })}
           </SidebarWrap>
         </SidebarNav>
