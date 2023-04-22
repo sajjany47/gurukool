@@ -1,4 +1,5 @@
 import "./App.css";
+import "../src/App.scss";
 // import Sidebar from "./Page/Teacher/Sidebar/Sidebar";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { ProSidebarProvider } from "react-pro-sidebar";
