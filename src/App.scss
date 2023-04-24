@@ -1,12 +1,19 @@
 .sidebar {
-  background: #15171c;
+  background: #e9eefb;
   width: 250px;
   height: 100vh;
   display: flex;
   justify-content: center;
-  position: fixed;
+  // position: fixed;
   top: 0;
   //   left: ${({ sidebar }) => (sidebar ? "0" : "-100%")};
   transition: 350ms;
   z-index: 10;
 }
+
+// .sidebar MenuItem:hover {
+//   background-color: #ea2c62;
+//   padding: 12px;
+//   color: #d81717;
+//   transition: all 0.5s;
+// }
