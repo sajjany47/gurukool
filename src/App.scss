@@ -1,18 +1,17 @@
 .sidebar {
-  background: #35c30e;
-  width: 250px;
+  background: rgb(5, 68, 104);
+  width: 251px;
   height: 100vh;
   display: flex;
   justify-content: center;
-  // position: fixed;
   top: 0;
-  transition: 350ms;
-  z-index: 10;
-  font-size: 20px;
+  padding: 20px 0;
+  transition: all 0.5s ease;
+  font-size: 16px;
+}
 
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-
-  font-weight: 600;
+.sidebarMenu {
+  color: #ffffff;
 }
 
 // .sidebar MenuItem:hover {

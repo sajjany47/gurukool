@@ -5,7 +5,6 @@ import SidebarData from "../component/SidebarData";
 import * as FaIcons from "react-icons/fa";
 import { Toolbar } from "primereact/toolbar";
 import { Avatar } from "primereact/avatar";
-import { Image } from "primereact/image";
 
 const SideNav = () => {
   const { collapseSidebar, isCollapsed } = useProSidebar();
@@ -21,15 +20,7 @@ const SideNav = () => {
     }
   }
 
-  const startContent = (
-    <React.Fragment>
-      <Image
-        src="https://gurukoolmamc.in/home/images/title.png"
-        alt="Image"
-        width="150"
-      />
-    </React.Fragment>
-  );
+  const startContent = <React.Fragment></React.Fragment>;
 
   const endContent = (
     <React.Fragment>
@@ -51,7 +42,7 @@ const SideNav = () => {
         collapsed={!isExpanded}
       >
         <Menu className="sidebar">
-          <MenuItem style={{ marginTop: "20px" }}>
+          <MenuItem style={{ marginLeft: "17px" }} className="sidebarMenu">
             <FaIcons.FaBars
               onClick={() => {
                 collapseSidebar();
@@ -64,7 +55,8 @@ const SideNav = () => {
                 <MenuItem
                   icon={item.icon}
                   component={<Link to={item.path} />}
-                  style={{ marginTop: "10px" ,}}
+                  style={{ marginLeft: "13px" }}
+                  className="sidebarMenu"
                 >
                   {item.title}
                 </MenuItem>
@@ -78,7 +70,7 @@ const SideNav = () => {
           <Toolbar
             start={startContent}
             end={endContent}
-            style={{ backgroundColor: "#e9eefb" }}
+            style={{ background: "rgb(7, 105, 185)" }}
           />
         </div>
         <Outlet />
