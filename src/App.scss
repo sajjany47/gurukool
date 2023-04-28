@@ -1,14 +1,18 @@
 .sidebar {
-  background: #e9eefb;
+  background: #35c30e;
   width: 250px;
   height: 100vh;
   display: flex;
   justify-content: center;
   // position: fixed;
   top: 0;
-  //   left: ${({ sidebar }) => (sidebar ? "0" : "-100%")};
   transition: 350ms;
   z-index: 10;
+  font-size: 20px;
+
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+
+  font-weight: 600;
 }
 
 // .sidebar MenuItem:hover {

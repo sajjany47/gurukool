@@ -57,3 +57,163 @@ export const SidebarData = [
     icon: <i className="pi pi-user" />,
   },
 ];
+
+export const teacherSidebar = [
+  {
+    path: "",
+    title: "Home",
+    icon: <SiGoogleclassroom />,
+  },
+  {
+    path: "",
+    title: "Classrooms",
+    icon: <RiLiveLine />,
+  },
+  {
+    path: "",
+    title: "Students",
+    icon: <MdAddTask />,
+  },
+  {
+    path: "",
+    title: "Assignments",
+    icon: <MdOutlineMiscellaneousServices />,
+  },
+  {
+    path: "",
+    title: "Gradebook",
+    icon: <AiOutlineNotification />,
+  },
+  {
+    path: "",
+    title: "Attendance",
+    icon: <i className="pi pi-user" />,
+  },
+  {
+    path: "",
+    title: "Messaging",
+    icon: <MdAddTask />,
+  },
+  {
+    path: "",
+    title: "Calendar",
+    icon: <MdOutlineMiscellaneousServices />,
+  },
+  {
+    path: "",
+    title: "Settings",
+    icon: <AiOutlineNotification />,
+  },
+  {
+    path: "",
+    title: "Help/Support",
+    icon: <i className="pi pi-user" />,
+  },
+];
+
+export const studentSidebar = [
+  {
+    path: "",
+    title: "Home",
+    icon: <SiGoogleclassroom />,
+  },
+  {
+    path: "",
+    title: "Profile",
+    icon: <RiLiveLine />,
+  },
+  {
+    path: "",
+    title: "Classes/Courses",
+    icon: <MdAddTask />,
+  },
+  {
+    path: "",
+    title: "Assignments",
+    icon: <MdOutlineMiscellaneousServices />,
+  },
+  {
+    path: "",
+    title: "Performance",
+    icon: <AiOutlineNotification />,
+  },
+  {
+    path: "",
+    title: "Notifications",
+    icon: <i className="pi pi-user" />,
+  },
+  {
+    path: "",
+    title: "Resources",
+    icon: <MdAddTask />,
+  },
+  {
+    path: "",
+    title: "Settings",
+    icon: <MdOutlineMiscellaneousServices />,
+  },
+
+  {
+    path: "",
+    title: "Support",
+    icon: <i className="pi pi-user" />,
+  },
+];
+
+export const staffSidebar = [
+  {
+    path: "",
+    title: "Home",
+    icon: <SiGoogleclassroom />,
+  },
+  {
+    path: "",
+    title: "Registration",
+    icon: <RiLiveLine />,
+  },
+  {
+    path: "",
+    title: "Budget summary",
+    icon: <MdAddTask />,
+  },
+  {
+    path: "",
+    title: "Cash flow statement",
+    icon: <MdOutlineMiscellaneousServices />,
+  },
+  {
+    path: "",
+    title: "Expense tracker",
+    icon: <AiOutlineNotification />,
+  },
+  {
+    path: "",
+    title: "Payroll information",
+    icon: <i className="pi pi-user" />,
+  },
+  {
+    path: "",
+    title: "Accounts payable and receivable",
+    icon: <MdAddTask />,
+  },
+  {
+    path: "",
+    title: "Financial reports",
+    icon: <MdOutlineMiscellaneousServices />,
+  },
+  {
+    path: "",
+    title: "Fundraising tracker",
+    icon: <AiOutlineNotification />,
+  },
+  {
+    path: "",
+    title: "Profile",
+    icon: <AiOutlineNotification />,
+  },
+  {
+    path: "",
+    title: "Support",
+    icon: <i className="pi pi-user" />,
+  },
+];

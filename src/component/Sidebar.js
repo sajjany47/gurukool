@@ -10,6 +10,7 @@ import { Image } from "primereact/image";
 const SideNav = () => {
   const { collapseSidebar, isCollapsed } = useProSidebar();
   const [isExpanded, setIsExpanded] = React.useState(true);
+
   function handleToggle() {
     if (isCollapsed) {
       collapseSidebar(false);
@@ -50,7 +51,7 @@ const SideNav = () => {
         collapsed={!isExpanded}
       >
         <Menu className="sidebar">
-          <MenuItem>
+          <MenuItem style={{ marginTop: "20px" }}>
             <FaIcons.FaBars
               onClick={() => {
                 collapseSidebar();
@@ -60,7 +61,11 @@ const SideNav = () => {
           {SidebarData.teacher.map((item) => {
             return (
               <>
-                <MenuItem icon={item.icon} component={<Link to={item.path} />}>
+                <MenuItem
+                  icon={item.icon}
+                  component={<Link to={item.path} />}
+                  style={{ marginTop: "10px" ,}}
+                >
                   {item.title}
                 </MenuItem>
               </>
