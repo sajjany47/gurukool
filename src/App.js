@@ -1,6 +1,5 @@
 import "./App.css";
 import "../src/App.scss";
-// import Sidebar from "./Page/Teacher/Sidebar/Sidebar";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { ProSidebarProvider } from "react-pro-sidebar";
 import "primereact/resources/themes/mdc-light-indigo/theme.css";
@@ -9,7 +8,7 @@ import "primeicons/primeicons.css";
 import "../node_modules/primeflex/primeflex.css";
 import Schedule from "./Page/Teacher/Schedule";
 import SideNav from "./component/Sidebar";
-import Home from "./Page/Teacher/Sidebar/Home";
+import Home from "./Page/Teacher/Home";
 
 function App() {
   return (
@@ -22,7 +21,6 @@ function App() {
           </Route>
         </Routes>
       </ProSidebarProvider>
-      {/* <Sidebar /> */}
     </BrowserRouter>
   );
 }

@@ -41,7 +41,19 @@ const SideNav = () => {
         defaultCollapsed={true}
         collapsed={!isExpanded}
       >
-        <Menu className="sidebar">
+        <Menu
+          className="sidebar"
+          menuItemStyles={{
+            button: ({ level, active, disabled }) => {
+              // only apply styles on first level elements of the tree
+              if (level === 0)
+                return {
+                  color: disabled ? "#f5d9ff" : "#d359ff",
+                  backgroundColor: active ? "#eecef9" : undefined,
+                };
+            },
+          }}
+        >
           <MenuItem style={{ marginLeft: "17px" }} className="sidebarMenu">
             <FaIcons.FaBars
               onClick={() => {
