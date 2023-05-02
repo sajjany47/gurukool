@@ -48,8 +48,14 @@ const SideNav = () => {
               // only apply styles on first level elements of the tree
               if (level === 0)
                 return {
-                  color: disabled ? "#f5d9ff" : "#d359ff",
-                  backgroundColor: active ? "#eecef9" : undefined,
+                  fontSize: "20px",
+                  marginTop: "25px",
+                  "&:hover": {
+                    backgroundColor: "#335B8C !important",
+                    color: "white !important",
+                    borderRadius: "8px !important",
+                    fontWeight: "bold !important",
+                  },
                 };
             },
           }}
