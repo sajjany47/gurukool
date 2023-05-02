@@ -1,35 +1,61 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useProSidebar, Sidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { Link, Outlet } from "react-router-dom";
 import SidebarData from "../component/SidebarData";
 import * as FaIcons from "react-icons/fa";
 import { Toolbar } from "primereact/toolbar";
 import { Avatar } from "primereact/avatar";
+import { SlideMenu } from "primereact/slidemenu";
+import { Button } from "primereact/button";
 
 const SideNav = () => {
   const { collapseSidebar, isCollapsed } = useProSidebar();
   const [isExpanded, setIsExpanded] = React.useState(true);
+  const menu = useRef(null);
 
-  function handleToggle() {
-    if (isCollapsed) {
-      collapseSidebar(false);
-      setIsExpanded(true);
-    } else {
-      collapseSidebar(true);
-      setIsExpanded(false);
-    }
-  }
+  // function handleToggle() {
+  //   if (isCollapsed) {
+  //     collapseSidebar(false);
+  //     setIsExpanded(true);
+  //   } else {
+  //     collapseSidebar(true);
+  //     setIsExpanded(false);
+  //   }
+  // }
+
+  const items = [
+    {
+      label: "Profile",
+      icon: "pi pi-fw pi-power-off",
+    },
+    {
+      label: "Notification",
+      icon: "pi pi-fw pi-power-off",
+    },
+    {
+      label: "Logout",
+      icon: "pi pi-fw pi-power-off",
+    },
+  ];
 
   const startContent = <React.Fragment></React.Fragment>;
 
   const endContent = (
     <React.Fragment>
+      <SlideMenu
+        ref={menu}
+        model={items}
+        popup
+        viewportHeight={100}
+        menuWidth={100}
+      ></SlideMenu>
       <Avatar
         icon="pi pi-user"
         className="mr-2"
         size="large"
         style={{ backgroundColor: "#2196F3", color: "#ffffff" }}
         shape="circle"
+        onClick={(event) => menu.current.toggle(event)}
       />
     </React.Fragment>
   );
