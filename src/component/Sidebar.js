@@ -46,8 +46,8 @@ const SideNav = () => {
         ref={menu}
         model={items}
         popup
-        viewportHeight={100}
-        menuWidth={100}
+        viewportHeight={150}
+        menuWidth={150}
       ></SlideMenu>
       <Avatar
         icon="pi pi-user"
