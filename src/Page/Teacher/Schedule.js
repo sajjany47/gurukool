@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Card } from "primereact/card";
 import { Button } from "primereact/button";
 import { Rating } from "primereact/rating";
+import CardComponent from "../../component/CardComponent";
 
 function Schedule() {
   const scheduleData = [
@@ -48,69 +49,15 @@ function Schedule() {
       img: "https://unvoicedmedia.in/wp-content/uploads/2021/05/hindi-calligraphy.jpg",
     },
   ];
-  const [value, setValue] = useState(null);
-  // const header = (
-  //   <>
-  //     <img
-  //       alt="Card"
-  //       src="https://primefaces.org/cdn/primereact/images/usercard.png"
-  //     />
-  //     <Rating
-  //       value={value}
-  //       onChange={(e) => setValue(e.value)}
-  //       cancel={false}
-  //     />
-  //   </>
-  // );
-  const footer = (
-    <div className="flex flex-wrap justify-content-end gap-2">
-      <Button label="Done" icon="pi pi-check" />
-      <Button
-        label="Change"
-        icon="pi pi-spin pi-cog"
-        className="p-button-outlined p-button-secondary"
-      />
-    </div>
-  );
-
-  const header = (item) => {
-    return (
-      <>
-        <img alt={item.title} src={item.img} />
-        <Rating
-          value={value}
-          onChange={(e) => setValue(e.value)}
-          cancel={false}
-        />
-      </>
-    );
-  };
 
   return (
     <div className="col-12">
       <div className="grid">
-        {scheduleData.map((item) => {
-          return (
-            <>
-              <div className="col-12 md:4">
-                <Card
-                  title={item.subject}
-                  subTitle={item.time}
-                  footer={footer}
-                  header={header}
-                  className="md:w-20rem m-4"
-                >
-                  {/* <p className="m-0">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
-          sed consequuntur error repudiandae numquam deserunt quisquam repellat
-          libero asperiores earum nam nobis, culpa ratione quam perferendis
-          esse, cupiditate neque quas!
-        </p> */}
-                </Card>
-              </div>
-            </>
-          );
-        })}
+        {scheduleData.map((item) => (
+          <div className="col-12 md:col-4">
+            <CardComponent />
+          </div>
+        ))}
       </div>
     </div>
   );
