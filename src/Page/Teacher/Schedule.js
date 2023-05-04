@@ -55,7 +55,11 @@ function Schedule() {
       <div className="grid">
         {scheduleData.map((item) => (
           <div className="col-12 md:col-4">
-            <CardComponent />
+            <CardComponent
+              title={`${item.subject} (Class ${item.class})`}
+              subTitle={`${item.Day} ${item.time} `}
+              img={item.img}
+            />
           </div>
         ))}
       </div>

@@ -11,7 +11,11 @@ const CardComponent = (props) => {
       subTitle={props.subTitle}
       className="md:w-20rem m-4"
     >
-      <img alt={props.title} src={props.img} />
+      <img
+        alt={props.title}
+        src={props.img}
+        style={{ height: "120px", width: "300px" }}
+      />
       <Rating
         value={value}
         onChange={(e) => setValue(e.value)}
