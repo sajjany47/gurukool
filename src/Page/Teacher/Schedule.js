@@ -65,10 +65,10 @@ function Schedule() {
   return (
     <div className="col-12">
       <div className="grid">
-        <div className="col-8">
+        <div className="col-9">
           <h3>{today}</h3>
         </div>
-        <div className="col-4">
+        <div className="col-3">
           <Dropdown
             value={selectedCity}
             onChange={(e) => setSelectedCity(e.value)}
