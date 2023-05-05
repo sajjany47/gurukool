@@ -1,10 +1,19 @@
 import React, { useState } from "react";
-import { Card } from "primereact/card";
-import { Button } from "primereact/button";
-import { Rating } from "primereact/rating";
 import CardComponent from "../../component/CardComponent";
+import { Dropdown } from "primereact/dropdown";
+import moment from "moment";
 
 function Schedule() {
+  const [selectedCity, setSelectedCity] = useState(null);
+  const cities = [
+    { name: "Monday", code: "Monday" },
+    { name: "Tuesday", code: "Tuesday" },
+    { name: "Wednesday", code: "Wednesday" },
+    { name: "Thursday", code: "Thursday" },
+    { name: "Friday", code: "Friday" },
+    { name: "Saturday", code: "Saturday" },
+    { name: "Sunday", code: "Sunday" },
+  ];
   const scheduleData = [
     {
       subject: "Physic",
@@ -50,10 +59,31 @@ function Schedule() {
     },
   ];
 
+  let today = moment(new Date()).format("dddd, MMMM Do YYYY");
+  console.log(today);
+
   return (
     <div className="col-12">
+      <div className="col-12">
+        <div className="grid">
+          <div className="col-10">
+            <h3>{today}</h3>
+          </div>
+          <div className="col-2">
+            <Dropdown
+              value={selectedCity}
+              onChange={(e) => setSelectedCity(e.value)}
+              options={cities}
+              optionLabel="name"
+              placeholder="Select a Day"
+              className="w-full md:w-14rem"
+            />
+          </div>
+        </div>
+      </div>
+
       <div className="grid">
-        {scheduleData.map((item) => (
+        {scheduleData.map((item, index) => (
           <div className="col-12 md:col-4">
             <CardComponent
               title={`${item.subject} (Class ${item.class})`}

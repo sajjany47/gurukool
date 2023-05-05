@@ -16,13 +16,23 @@ const CardComponent = (props) => {
         src={props.img}
         style={{ height: "120px", width: "300px" }}
       />
+
       <Rating
         value={value}
         onChange={(e) => setValue(e.value)}
         cancel={false}
       />
       <div className="flex flex-wrap justify-content-end gap-2">
-        <Button label="Done" icon="pi pi-check" />
+        <Button
+          label="Start"
+          className="p-button-outlined p-button-Primary"
+          icon="pi pi-check"
+        />
+        <Button
+          label="Done"
+          icon="pi pi-stop-circle"
+          className="p-button-outlined p-button-success"
+        />
         <Button
           label="Change"
           icon="pi pi-spin pi-cog"

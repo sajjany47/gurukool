@@ -93,7 +93,7 @@ const SideNav = () => {
               }}
             />
           </MenuItem>
-          {SidebarData.teacher.map((item) => {
+          {SidebarData.teacher.map((item, index) => {
             return (
               <>
                 <MenuItem
