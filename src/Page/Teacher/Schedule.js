@@ -64,21 +64,19 @@ function Schedule() {
 
   return (
     <div className="col-12">
-      <div className="col-12">
-        <div className="grid">
-          <div className="col-10">
-            <h3>{today}</h3>
-          </div>
-          <div className="col-2">
-            <Dropdown
-              value={selectedCity}
-              onChange={(e) => setSelectedCity(e.value)}
-              options={cities}
-              optionLabel="name"
-              placeholder="Select a Day"
-              className="w-full md:w-14rem"
-            />
-          </div>
+      <div className="grid">
+        <div className="col-8">
+          <h3>{today}</h3>
+        </div>
+        <div className="col-4">
+          <Dropdown
+            value={selectedCity}
+            onChange={(e) => setSelectedCity(e.value)}
+            options={cities}
+            optionLabel="name"
+            placeholder="Select a Day"
+            className="w-full md:w-14rem"
+          />
         </div>
       </div>
 

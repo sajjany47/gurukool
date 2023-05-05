@@ -63,7 +63,12 @@ const SideNav = () => {
   return (
     <div style={{ display: "flex", height: "100%" }}>
       <Sidebar
-        style={{ height: "100vh" }}
+        style={{
+          height: "100vh",
+          // position: "-webkit-sticky",
+          position: "sticky",
+          top: 0,
+        }}
         defaultCollapsed={true}
         collapsed={!isExpanded}
       >
