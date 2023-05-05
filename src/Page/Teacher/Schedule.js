@@ -4,7 +4,6 @@ import { Dropdown } from "primereact/dropdown";
 import moment from "moment";
 
 function Schedule() {
-  const [selectedCity, setSelectedCity] = useState(null);
   const cities = [
     { name: "Monday", code: "Monday" },
     { name: "Tuesday", code: "Tuesday" },
@@ -14,6 +13,13 @@ function Schedule() {
     { name: "Saturday", code: "Saturday" },
     { name: "Sunday", code: "Sunday" },
   ];
+
+  const dayName = moment(new Date()).format("dddd");
+
+  const filterDay = cities.filter((item) => item.name === dayName);
+
+  const [selectedCity, setSelectedCity] = useState(filterDay[0]);
+
   const scheduleData = [
     {
       subject: "Physic",
@@ -60,7 +66,6 @@ function Schedule() {
   ];
 
   let today = moment(new Date()).format("dddd, MMMM Do YYYY");
-  console.log(today);
 
   return (
     <div className="col-12">
