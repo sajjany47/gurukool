@@ -22,7 +22,7 @@ const SidebarData = {
       icon: <RiLiveLine />,
     },
     {
-      path: "/comment",
+      path: "/taskassign",
       title: "Task Assign",
       icon: <MdAddTask />,
     },

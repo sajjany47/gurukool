@@ -9,6 +9,7 @@ import "../node_modules/primeflex/primeflex.css";
 import Schedule from "./Page/Teacher/Schedule";
 import SideNav from "./component/Sidebar";
 import Home from "./Page/Teacher/Home";
+import TaskAssign from "./Page/Teacher/TaskAssign";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<SideNav />}>
             <Route path="/shedule" element={<Schedule />} />
+            <Route path="/taskassign" element={<TaskAssign />} />
             <Route index element={<Home />} />
           </Route>
         </Routes>
