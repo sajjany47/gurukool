@@ -5,10 +5,16 @@ import { Column } from "primereact/column";
 import { StudentData } from "../../config/Data";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
+import { Dialog } from "primereact/dialog";
+import TaskDialoge from "./Dialoge/TaskDialoge";
 
 const TaskAssign = () => {
   const [selectedClass, setSelectedClass] = useState([]);
   const [filterClasses, setFilterClasses] = useState(StudentData);
+  const [taskDialoge, setTaskDialoge] = useState(false);
+  const [profileDialoge, setProfileDialoge] = useState(false);
+  const [noteDialoge, setNoteDialoge] = useState(false);
+
   const classDetail = [
     { name: "Seven", code: "Seven" },
     { name: "Eight", code: "Eight" },
@@ -25,7 +31,15 @@ const TaskAssign = () => {
     setFilterClasses(filterClass);
   };
 
-  const handleTaskAssign = (id) => {};
+  const handleTaskAssign = (id) => {
+    setTaskDialoge(true);
+  };
+  const handleProfile = (id) => {
+    setProfileDialoge(true);
+  };
+  const handleNote = (id) => {
+    setNoteDialoge(true);
+  };
 
   const assignTask = (item) => {
     return (
@@ -34,8 +48,8 @@ const TaskAssign = () => {
           className="pi pi-send mr-2"
           onClick={() => handleTaskAssign(item.id)}
         />
-        <i className="pi pi-eye mr-2" />
-        <i className="pi pi-comment mr-2" />
+        <i className="pi pi-eye mr-2" onClick={() => handleProfile(item.id)} />
+        <i className="pi pi-comment mr-2" onClick={() => handleNote(item.id)} />
       </div>
     );
   };
@@ -69,6 +83,30 @@ const TaskAssign = () => {
           <Column field={assignTask} header="Action"></Column>
         </DataTable>
       </div>
+      <Dialog
+        header="Task Assign"
+        visible={taskDialoge}
+        style={{ width: "50vw" }}
+        onHide={() => setTaskDialoge(false)}
+      >
+        <TaskDialoge />
+      </Dialog>
+      <Dialog
+        header="View Profile"
+        visible={profileDialoge}
+        style={{ width: "50vw" }}
+        onHide={() => setProfileDialoge(false)}
+      >
+        KUMAR
+      </Dialog>
+      <Dialog
+        header="Note For Student"
+        visible={noteDialoge}
+        style={{ width: "50vw" }}
+        onHide={() => setNoteDialoge(false)}
+      >
+        YADAV
+      </Dialog>
     </div>
   );
 };
