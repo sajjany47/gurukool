@@ -4,16 +4,17 @@ import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { StudentData } from "../../config/Data";
 import { InputText } from "primereact/inputtext";
-import { Button } from "primereact/button";
 import { Dialog } from "primereact/dialog";
 import TaskDialoge from "./Dialoge/TaskDialoge";
+import ProfileDialoge from "./Dialoge/ProfileDialoge";
+import { Button } from "primereact/button";
 
 const TaskAssign = () => {
   const [selectedClass, setSelectedClass] = useState([]);
   const [filterClasses, setFilterClasses] = useState(StudentData);
   const [taskDialoge, setTaskDialoge] = useState(false);
   const [profileDialoge, setProfileDialoge] = useState(false);
-  const [noteDialoge, setNoteDialoge] = useState(false);
+  const [profileDialogeData, setProfileDialogeData] = useState(false);
 
   const classDetail = [
     { name: "Seven", code: "Seven" },
@@ -36,9 +37,10 @@ const TaskAssign = () => {
   };
   const handleProfile = (id) => {
     setProfileDialoge(true);
-  };
-  const handleNote = (id) => {
-    setNoteDialoge(true);
+
+    const filterID = filterClasses.filter((item) => item.id === id);
+
+    setProfileDialogeData(filterID[0]);
   };
 
   const assignTask = (item) => {
@@ -49,7 +51,6 @@ const TaskAssign = () => {
           onClick={() => handleTaskAssign(item.id)}
         />
         <i className="pi pi-eye mr-2" onClick={() => handleProfile(item.id)} />
-        <i className="pi pi-comment mr-2" onClick={() => handleNote(item.id)} />
       </div>
     );
   };
@@ -68,9 +69,19 @@ const TaskAssign = () => {
           />
         </div>
         <div className="col-12 md:col-6">
-          <div className="p-input-icon-left">
-            <i className="pi pi-search" />
-            <InputText placeholder="Search" />
+          <div className="grid">
+            <div className="col-12 md:col-5">
+              <div className="p-input-icon-left">
+                <i className="pi pi-search" />
+                <InputText placeholder="Search" />
+              </div>
+            </div>
+            <div className="col-12 md:col-3">
+              <Button
+                label="Assign All Student"
+                style={{ height: "45px", width: "180px" }}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -97,15 +108,7 @@ const TaskAssign = () => {
         style={{ width: "50vw" }}
         onHide={() => setProfileDialoge(false)}
       >
-        KUMAR
-      </Dialog>
-      <Dialog
-        header="Note For Student"
-        visible={noteDialoge}
-        style={{ width: "50vw" }}
-        onHide={() => setNoteDialoge(false)}
-      >
-        YADAV
+        <ProfileDialoge data={profileDialogeData} />
       </Dialog>
     </div>
   );

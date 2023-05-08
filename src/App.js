@@ -10,6 +10,7 @@ import Schedule from "./Page/Teacher/Schedule";
 import SideNav from "./component/Sidebar";
 import Home from "./Page/Teacher/Home";
 import TaskAssign from "./Page/Teacher/TaskAssign";
+import Setting from "./Page/Teacher/Setting";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<SideNav />}>
             <Route path="/shedule" element={<Schedule />} />
             <Route path="/taskassign" element={<TaskAssign />} />
+            <Route path="/setting" element={<Setting />} />
             <Route index element={<Home />} />
           </Route>
         </Routes>

@@ -27,8 +27,8 @@ const SidebarData = {
       icon: <MdAddTask />,
     },
     {
-      path: "/product",
-      title: "Service",
+      path: "/setting",
+      title: "Setting",
       icon: <MdOutlineMiscellaneousServices />,
     },
     {
